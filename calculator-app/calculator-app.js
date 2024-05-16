@@ -6,7 +6,7 @@ const port = 3000;
 
 app.use(express.static('public'));
 
-// Lisans kontrolü yap
+// Check license
 const checkLicense = async (req, res, next) => {
   try {
     const response = await axios.get('http://license-api:4000/check-license');
@@ -14,7 +14,7 @@ const checkLicense = async (req, res, next) => {
       next();
     }
   } catch (error) {
-    res.status(403).send('Lisans süresi doldu veya geçersiz IP adresi.');
+    res.status(403).send('License has expired or invalid IP address.');
   }
 };
 
@@ -25,5 +25,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Hesap makinesi uygulaması ${port} portunda çalışıyor.`);
+  console.log(`Calculator app is running on port ${port}.`);
 });
