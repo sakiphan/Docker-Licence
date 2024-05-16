@@ -6,7 +6,7 @@ This project consists of a license control API and a simple calculator applicati
 
 ## Project Structure
 
-```
+
 licensed-calculator/
 ├── license-api/
 │   ├── Dockerfile
