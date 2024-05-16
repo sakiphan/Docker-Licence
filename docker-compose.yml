@@ -1,0 +1,14 @@
+version: '3'
+services:
+  license-api:
+    build: ./license-api
+    container_name: license-api
+    ports:
+      - "4000:4000"
+  calculator-app:
+    build: ./calculator-app
+    container_name: calculator-app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - license-api

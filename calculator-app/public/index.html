@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    /* Basit stil ayarları */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    .calculator {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .display {
+      width: 100%;
+      height: 50px;
+      margin-bottom: 10px;
+      font-size: 2em;
+      text-align: right;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .button {
+      padding: 20px;
+      font-size: 1.5em;
+      text-align: center;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .button:active {
+      background-color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" class="display" id="display" disabled>
+    <div class="buttons">
+      <div class="button" onclick="pressKey('1')">1</div>
+      <div class="button" onclick="pressKey('2')">2</div>
+      <div class="button" onclick="pressKey('3')">3</div>
+      <div class="button" onclick="pressKey('+')">+</div>
+      <div class="button" onclick="pressKey('4')">4</div>
+      <div class="button" onclick="pressKey('5')">5</div>
+      <div class="button" onclick="pressKey('6')">6</div>
+      <div class="button" onclick="pressKey('-')">-</div>
+      <div class="button" onclick="pressKey('7')">7</div>
+      <div class="button" onclick="pressKey('8')">8</div>
+      <div class="button" onclick="pressKey('9')">9</div>
+      <div class="button" onclick="pressKey('*')">*</div>
+      <div class="button" onclick="pressKey('0')">0</div>
+      <div class="button" onclick="pressKey('.')">.</div>
+      <div class="button" onclick="calculate()">=</div>
+      <div class="button" onclick="pressKey('/')">/</div>
+    </div>
+  </div>
+
+  <script>
+    let display = document.getElementById('display');
+
+    function pressKey(key) {
+      display.value += key;
+    }
+
+    function calculate() {
+      try {
+        display.value = eval(display.value);
+      } catch (e) {
+        display.value = 'Error';
+      }
+    }
+
+    async function checkLicense() {
+      try {
+        const response = await fetch('http://localhost:4000/check-license');
+        if (!response.ok) {
+          throw new Error('Lisans süresi doldu veya geçersiz IP adresi.');
+        }
+        const message = await response.text();
+        console.log(message);
+      } catch (error) {
+        alert(error.message);
+        document.querySelector('.calculator').style.display = 'none';
+      }
+    }
+
+    checkLicense();
+    setInterval(checkLicense, 10000); // Lisans kontrolünü her 10 saniyede bir yap
+  </script>
+</body>
+</html>

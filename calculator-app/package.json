@@ -1,0 +1,13 @@
+{
+  "name": "calculator-app",
+  "version": "1.0.0",
+  "description": "Hesap makinesi uygulaması",
+  "main": "calculator-app.js",
+  "scripts": {
+    "start": "node calculator-app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "axios": "^0.21.1"
+  }
+}

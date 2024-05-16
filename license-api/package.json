@@ -1,0 +1,13 @@
+{
+  "name": "license-api",
+  "version": "1.0.0",
+  "description": "Lisans kontrol API'si",
+  "main": "license-api.js",
+  "scripts": {
+    "start": "node license-api.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
