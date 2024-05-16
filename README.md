@@ -19,7 +19,7 @@ licensed-calculator/
     ├── package.json
     └── public/
         └── index.html
-```
+
 
 ## Prerequisites
 
