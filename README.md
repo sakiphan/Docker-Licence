@@ -37,7 +37,7 @@ Follow these steps to set up and run the project.
 
 ```bash
 git clone https://github.com/sakiphan/docker-licensed.git
-cd licensed-calculator
+cd Docker-Licence
 ```
 
 ### Step 2: Start Services with Docker Compose
