@@ -1,12 +1,12 @@
 
-
-
 ```markdown
 # Docker-Licensed Calculator App
 
 This project consists of a license control API and a simple calculator application. The calculator application shuts down when the license period expires.
-```
+
 ## Project Structure
+
+```
 licensed-calculator/
 ├── license-api/
 │   ├── Dockerfile
@@ -19,7 +19,7 @@ licensed-calculator/
     ├── package.json
     └── public/
         └── index.html
-
+```
 
 ## Prerequisites
 
@@ -97,4 +97,3 @@ The application periodically checks the license status every 10 seconds. If the 
 3. Commit your changes.
 4. Push to the branch.
 5. Open a pull request.
-
