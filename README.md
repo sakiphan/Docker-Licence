@@ -36,7 +36,7 @@ Follow these steps to set up and run the project.
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/sakiphan/docker-licensed.git
+git clone https://github.com/sakiphan/Docker-Licence.git
 cd Docker-Licence
 ```
 
