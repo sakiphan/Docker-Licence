@@ -1,5 +1,4 @@
 
-```markdown
 # Docker-Licensed Calculator App
 
 This project consists of a license control API and a simple calculator application. The calculator application shuts down when the license period expires.
