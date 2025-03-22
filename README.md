@@ -89,6 +89,7 @@ The calculator has a simple user interface with buttons for digits and basic ari
 
 The application periodically checks the license status every 10 seconds. If the license has expired, it hides the calculator interface and displays an alert message.
 
+
 ## Contributing
 
 1. Fork this repository.
